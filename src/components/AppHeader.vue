@@ -1,19 +1,26 @@
 <script>
+import { store } from "../store";
 export default {
   name: "AppHeader",
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <div class="container d-flex justify-content-between mt-2">
     <h1 class="text-danger">Boolfix</h1>
-    <form class="d-flex">
+    <form class="d-flex" @submit.prevent="$emit('search')">
       <input
         class="form-control form-control-sm w-auto"
         type="text"
         placeholder="Search Title "
+        v-model="store.searchText"
       />
-      <button type="button" class="btn text-white btn-dark">Search</button>
+      <button type="submit" class="btn text-white btn-dark">Search</button>
     </form>
   </div>
 </template>
