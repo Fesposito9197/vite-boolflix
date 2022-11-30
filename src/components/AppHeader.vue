@@ -13,7 +13,7 @@ export default {
 <template>
   <header>
     <div class="container d-flex justify-content-between pt-2">
-      <h1 class="text-danger">Boolfix</h1>
+      <h1>BOOLFIX</h1>
       <form class="d-flex me-1 pb-1" @submit.prevent="$emit('search')">
         <input
           class="form-control form-control-sm w-auto me-2"
@@ -21,13 +21,43 @@ export default {
           placeholder="Search Title "
           v-model="store.searchText"
         />
-        <button type="submit" class="btn text-white btn-danger">Search</button>
+        <button type="submit" class="my-button">Search</button>
       </form>
     </div>
   </header>
 </template>
 
 <style lang="scss">
+h1 {
+  color: #e50914;
+}
+.my-button {
+  background: transparent;
+  color: red;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 2px solid red;
+  border-radius: 32px;
+  transform: translate(0);
+  overflow: hidden;
+  cursor: pointer;
+}
+.my-button::before {
+  content: "";
+  position: absolute;
+  background: red;
+  width: 8px;
+  top: 0;
+  bottom: 0;
+  left: -32px;
+  transform: rotate(-16deg);
+  filter: blur(6px);
+}
+.my-button:hover::before {
+  left: calc(100% + 32px);
+  transition: 0.75s;
+}
 header {
   background-color: black;
 }

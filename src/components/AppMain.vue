@@ -33,8 +33,4 @@ export default {
   </main>
 </template>
 
-<style lang="scss">
-main {
-  background-color: grey;
-}
-</style>
+<style lang="scss"></style>

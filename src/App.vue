@@ -51,5 +51,8 @@ export default {
 </template>
 
 <style lang="scss">
+body {
+  background-color: grey !important;
+}
 @import "./style/global.scss";
 </style>

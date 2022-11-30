@@ -22,7 +22,7 @@ export default {
       :alt="info.title"
       class="w-100"
     />
-    <img v-else src="https://via.placeholder.com/342x513" :alt="info.title" />
+    <img v-else src="https://via.placeholder.com/342x485" :alt="info.title" />
     <div class="overlay">
       <ul class="text-white p-2">
         <li><span class="fw-bold">Titolo:</span> {{ info.title }}</li>
