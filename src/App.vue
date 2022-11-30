@@ -17,8 +17,10 @@ export default {
   },
   methods: {
     goSearch() {
-      this.getUserSearch("movie");
-      this.getUserSearch("tv");
+      if (this.store.searchText != "") {
+        this.getUserSearch("movie");
+        this.getUserSearch("tv");
+      }
     },
 
     getUserSearch(type) {
@@ -31,7 +33,6 @@ export default {
           },
         })
         .then((res) => {
-          console.log(res.data.results);
           if (type == "movie") {
             this.store.movies = res.data.results;
           } else if (type == "tv") {
@@ -39,9 +40,6 @@ export default {
           }
         });
     },
-  },
-  created() {
-    this.getUserSearch();
   },
 };
 </script>
