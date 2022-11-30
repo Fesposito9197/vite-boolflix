@@ -15,15 +15,13 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <ul>
-      <li>
-        {{ info.title }} , {{ info.original_title }} ,
-        {{ info.original_language }} ,
-        {{ info.vote_average }}
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li>
+      {{ info.title }} , {{ info.original_title }} ,
+      {{ info.original_language }} ,
+      {{ info.vote_average }}
+    </li>
+  </ul>
 </template>
 
 <style lang="scss" scoped></style>
