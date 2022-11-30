@@ -13,7 +13,7 @@ export default {
 <template>
   <header>
     <div class="container d-flex justify-content-between pt-2">
-      <h1>BOOLFIX</h1>
+      <h1 class="text-danger">BOOLFIX</h1>
       <form class="d-flex me-1 pb-1" @submit.prevent="$emit('search')">
         <input
           class="form-control form-control-sm w-auto me-2"
@@ -33,11 +33,11 @@ h1 {
 }
 .my-button {
   background: transparent;
-  color: red;
+  color: #e50914;
   font-weight: 400;
   text-transform: uppercase;
   padding: 16px 36px;
-  border: 2px solid red;
+  border: 2px solid #e50914;
   border-radius: 32px;
   transform: translate(0);
   overflow: hidden;
@@ -46,7 +46,7 @@ h1 {
 .my-button::before {
   content: "";
   position: absolute;
-  background: red;
+  background: #e50914;
   width: 8px;
   top: 0;
   bottom: 0;
