@@ -1,10 +1,12 @@
 <script>
-import AppCard from "./AppCard.vue";
+import AppCardMovies from "./AppCardMovies.vue";
+import AppCardSeries from "./AppCardSeries.vue";
 import { store } from "../store";
 export default {
   name: "AppMain",
   components: {
-    AppCard,
+    AppCardMovies,
+    AppCardSeries,
   },
   data() {
     return {
@@ -15,7 +17,12 @@ export default {
 </script>
 
 <template>
-  <AppCard v-for="movie in store.movies" :info="movie" />
+  <div class="container">
+    <h2>MOVIES</h2>
+    <AppCardMovies v-for="movie in store.movies" :info="movie" />
+    <h2>TV SERIES</h2>
+    <AppCardSeries v-for="serie in store.tvseries" :info="serie" />
+  </div>
 </template>
 
 <style lang="scss"></style>

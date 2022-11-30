@@ -16,9 +16,14 @@ export default {
     };
   },
   methods: {
-    getUserSearch() {
+    goSearch() {
+      this.getUserSearch("movie");
+      this.getUserSearch("tv");
+    },
+
+    getUserSearch(type) {
       axios
-        .get("https://api.themoviedb.org/3/search/movie", {
+        .get("https://api.themoviedb.org/3/search/" + type, {
           params: {
             api_key: "86792600373b67f4bee4b673f1559637",
             query: this.store.searchText,
@@ -26,7 +31,12 @@ export default {
           },
         })
         .then((res) => {
-          this.store.movies = res.data.results;
+          console.log(res.data.results);
+          if (type == "movie") {
+            this.store.movies = res.data.results;
+          } else if (type == "tv") {
+            this.store.tvseries = res.data.results;
+          }
         });
     },
   },
@@ -34,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @search="getUserSearch" />
+  <AppHeader @search="goSearch" />
   <AppMain />
   <AppFooter />
 </template>
