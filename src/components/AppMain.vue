@@ -15,13 +15,7 @@ export default {
 </script>
 
 <template>
-  <ul v-for="movie in store.movies">
-    <li>
-      {{ movie.title }}, {{ movie.original_title }} ,
-      {{ movie.original_language }} , {{ movie.vote_average }}
-    </li>
-  </ul>
-  <AppCard />
+  <AppCard v-for="movie in store.movies" :info="movie" />
 </template>
 
 <style lang="scss"></style>

@@ -2,7 +2,9 @@
 import { store } from "../store";
 export default {
   name: "AppCard",
-  props: {},
+  props: {
+    info: Object,
+  },
   data() {
     return {
       store,
@@ -11,6 +13,14 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <ul>
+    <li>
+      {{ info.title }} {{ info.name }}, {{ info.original_title }}
+      {{ info.original_name }}, {{ info.original_language }} ,
+      {{ info.vote_average }}
+    </li>
+  </ul>
+</template>
 
 <style lang="scss" scoped></style>

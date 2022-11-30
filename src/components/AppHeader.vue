@@ -13,9 +13,9 @@ export default {
 <template>
   <div class="container d-flex justify-content-between mt-2">
     <h1 class="text-danger">Boolfix</h1>
-    <form class="d-flex" @submit.prevent="$emit('search')">
+    <form class="d-flex me-1" @submit.prevent="$emit('search')">
       <input
-        class="form-control form-control-sm w-auto"
+        class="form-control form-control-sm w-auto me-2"
         type="text"
         placeholder="Search Title "
         v-model="store.searchText"
