@@ -7,13 +7,18 @@ export default {
       store,
     };
   },
+  methods: {
+    refresh() {
+      window.location.reload();
+    },
+  },
 };
 </script>
 
 <template>
   <header>
     <div class="container d-flex justify-content-between pt-2">
-      <h1 class="text-danger">BOOLFIX</h1>
+      <h1 class="text-danger" @click="refresh">BOOLFIX</h1>
       <form class="d-flex me-1 pb-1" @submit.prevent="$emit('search')">
         <input
           class="form-control form-control-sm w-auto me-2"
