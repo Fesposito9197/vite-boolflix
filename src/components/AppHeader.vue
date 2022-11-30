@@ -31,6 +31,9 @@ export default {
 header {
   background-color: black;
 }
+h1 {
+  cursor: pointer;
+}
 button {
   margin-left: 10px;
 }
