@@ -11,6 +11,11 @@ export default {
       store,
     };
   },
+  computed: {
+    vote() {
+      return Math.Ceil(this.info.vote_average / 2);
+    },
+  },
 };
 </script>
 
@@ -22,7 +27,12 @@ export default {
       :alt="info.title"
       class="w-100"
     />
-    <img v-else src="https://via.placeholder.com/342x485" :alt="info.title" />
+    <img
+      v-else
+      src="https://via.placeholder.com/342x485"
+      :alt="info.title"
+      class="w-100"
+    />
     <div class="overlay">
       <ul class="text-white p-2">
         <li><span class="fw-bold">Titolo:</span> {{ info.title }}</li>
@@ -30,9 +40,10 @@ export default {
           <span class="fw-bold">Titolo originale:</span>
           {{ info.original_title }}
         </li>
-        <li><span class="fw-bold">Voto:</span></li>
-        <li class="text-break">
-          <span class="fw-bold">Overview:</span> {{ info.overview }}
+        <li><span class="fw-bold">Voto:</span>{{ this.info.vote_average }}</li>
+        <li class="my-text-overflow">
+          <span class="fw-bold">Overview:</span>
+          {{ info.overview }}
         </li>
       </ul>
     </div>
@@ -62,7 +73,10 @@ export default {
   margin: 10px 50px;
   position: relative;
 }
-
+.my-text-overflow {
+  line-height: 20px;
+  font-size: small;
+}
 ul {
   list-style: none;
   li:not(:last-child) {

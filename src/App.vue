@@ -42,15 +42,10 @@ export default {
     },
   },
   mounted() {
-    let generateRandomMovie = 0;
-    for (let i = 0; i < store.randomMovie.length; i++) {
-      generateRandomMovie = i;
-    }
     axios
-      .get("https://api.themoviedb.org/3/search/movie", {
+      .get("https://api.themoviedb.org/3/movie/top_rated", {
         params: {
           api_key: "86792600373b67f4bee4b673f1559637",
-          query: this.store.randomMovie[generateRandomMovie],
           language: "it-IT",
         },
       })
@@ -58,10 +53,9 @@ export default {
         this.store.movies = res.data.results;
       });
     axios
-      .get("https://api.themoviedb.org/3/search/tv", {
+      .get("https://api.themoviedb.org/3/tv/top_rated", {
         params: {
           api_key: "86792600373b67f4bee4b673f1559637",
-          query: this.store.randomMovie[generateRandomMovie],
           language: "it-IT",
         },
       })

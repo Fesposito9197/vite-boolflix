@@ -22,7 +22,12 @@ export default {
       :alt="info.name"
       class="w-100"
     />
-    <img v-else src="https://via.placeholder.com/342x513" :alt="info.name" />
+    <img
+      v-else
+      src="https://via.placeholder.com/342x513"
+      :alt="info.name"
+      class="w-100"
+    />
     <div class="overlay">
       <ul class="text-white p-2">
         <li><span class="fw-bold">Titolo:</span> {{ info.name }}</li>
@@ -31,7 +36,9 @@ export default {
           {{ info.original_name }}
         </li>
         <li><span class="fw-bold">Voto:</span> {{ info.vote_average }}</li>
-        <li><span class="fw-bold">Overview:</span> {{ info.overviews }}</li>
+        <li class="my-text-overflow">
+          <span class="fw-bold">Overview:</span> {{ info.overview }}
+        </li>
       </ul>
     </div>
   </div>
@@ -58,6 +65,10 @@ export default {
   width: calc(100% / 4);
   margin: 10px 50px;
   position: relative;
+}
+.my-text-overflow {
+  line-height: 15px;
+  font-size: small;
 }
 
 ul {
