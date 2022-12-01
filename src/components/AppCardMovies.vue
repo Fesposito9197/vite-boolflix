@@ -13,7 +13,8 @@ export default {
   },
   computed: {
     vote() {
-      return Math.Ceil(this.info.vote_average / 2);
+      console.log(Math.ceil(this.info.vote_average / 2));
+      return Math.ceil(this.info.vote_average / 2);
     },
   },
 };
@@ -40,7 +41,9 @@ export default {
           <span class="fw-bold">Titolo originale:</span>
           {{ info.original_title }}
         </li>
-        <li><span class="fw-bold">Voto:</span>{{ this.info.vote_average }}</li>
+        <li>
+          <span class="fw-bold">Voto:</span><i class="bi bi-star-fill"></i>
+        </li>
         <li class="my-text-overflow">
           <span class="fw-bold">Overview:</span>
           {{ info.overview }}
