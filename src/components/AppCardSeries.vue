@@ -11,6 +11,11 @@ export default {
       store,
     };
   },
+  computed: {
+    vote() {
+      return Math.ceil(this.info.vote_average / 2);
+    },
+  },
 };
 </script>
 
@@ -35,7 +40,10 @@ export default {
           <span class="fw-bold">Titolo originale:</span>
           {{ info.original_name }}
         </li>
-        <li><span class="fw-bold">Voto:</span> {{ info.vote_average }}</li>
+        <li>
+          <span class="fw-bold">Voto:</span>
+          <i v-for="n in vote" class="bi bi-star-fill"></i>
+        </li>
         <li class="my-text-overflow">
           <span class="fw-bold">Overview:</span> {{ info.overview }}
         </li>

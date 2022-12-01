@@ -13,7 +13,6 @@ export default {
   },
   computed: {
     vote() {
-      console.log(Math.ceil(this.info.vote_average / 2));
       return Math.ceil(this.info.vote_average / 2);
     },
   },
@@ -42,7 +41,8 @@ export default {
           {{ info.original_title }}
         </li>
         <li>
-          <span class="fw-bold">Voto:</span><i class="bi bi-star-fill"></i>
+          <span class="fw-bold">Voto:</span>
+          <i v-for="n in vote" class="bi bi-star-fill"></i>
         </li>
         <li class="my-text-overflow">
           <span class="fw-bold">Overview:</span>
