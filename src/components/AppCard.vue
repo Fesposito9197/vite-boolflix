@@ -21,7 +21,7 @@ export default {
     poster() {
       return this.info.poster_path
         ? `https://image.tmdb.org/t/p/w342${this.info.poster_path}`
-        : "https://via.placeholder.com/342x485";
+        : `https://via.placeholder.com/342x485/000?text=${this.title}`;
     },
     ogTitle() {
       return this.info.original_title
@@ -39,12 +39,7 @@ export default {
 
 <template>
   <div class="my-card">
-    <img
-      v-if="info.poster_path !== null"
-      :src="poster"
-      :alt="title"
-      class="w-100"
-    />
+    <img :src="poster" :alt="title" class="w-100" />
     <div class="overlay">
       <ul class="text-white p-2">
         <li><span class="fw-bold">Titolo:</span> {{ title }}</li>

@@ -43,7 +43,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://api.themoviedb.org/3/movie/top_rated", {
+      .get("https://api.themoviedb.org/3/movie/popular", {
         params: {
           api_key: "86792600373b67f4bee4b673f1559637",
           language: "it-IT",

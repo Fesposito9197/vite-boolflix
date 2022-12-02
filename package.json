@@ -13,8 +13,7 @@
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
-    "vue": "^3.2.41",
-    "vue-country-flag": "^2.3.2"
+    "vue": "^3.2.41"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
