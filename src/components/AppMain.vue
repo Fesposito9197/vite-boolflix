@@ -26,7 +26,7 @@ export default {
     <div class="container pt-4">
       <h2>TV SERIES</h2>
     </div>
-    <div class="container d-flex flex-wrap justify-content-between mt-4">
+    <div class="container d-flex flex-wrap mt-4">
       <AppCard v-for="serie in store.tvseries" :info="serie" />
     </div>
   </main>
