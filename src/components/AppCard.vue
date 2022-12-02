@@ -28,6 +28,11 @@ export default {
         ? this.info.original_title
         : this.info.original_name;
     },
+    overview() {
+      return this.info.overview
+        ? this.info.overview
+        : "Descrizione al momento non disponibile";
+    },
   },
 };
 </script>
@@ -54,7 +59,7 @@ export default {
         </li>
         <li class="my-text-overflow">
           <span class="fw-bold">Overview:</span>
-          {{ info.overview }}
+          {{ overview }}
         </li>
       </ul>
     </div>
