@@ -15,6 +15,19 @@ export default {
     vote() {
       return Math.ceil(this.info.vote_average / 2);
     },
+    title() {
+      return this.info.title ? this.info.title : this.info.name;
+    },
+    poster() {
+      return this.info.poster_path
+        ? `https://image.tmdb.org/t/p/w342${this.info.poster_path}`
+        : "https://via.placeholder.com/342x485";
+    },
+    ogTitle() {
+      return this.info.original_title
+        ? this.info.original_title
+        : this.info.original_name;
+    },
   },
 };
 </script>
@@ -23,24 +36,16 @@ export default {
   <div class="my-card">
     <img
       v-if="info.poster_path !== null"
-      :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`"
-      :alt="info.title"
-      class="w-100"
-    />
-    <img
-      v-else
-      src="https://via.placeholder.com/342x485"
-      :alt="info.title"
+      :src="poster"
+      :alt="title"
       class="w-100"
     />
     <div class="overlay">
       <ul class="text-white p-2">
-        <li>
-          <span class="fw-bold">Titolo:</span> {{ info.title }} {{ info.name }}
-        </li>
+        <li><span class="fw-bold">Titolo:</span> {{ title }}</li>
         <li>
           <span class="fw-bold">Titolo originale:</span>
-          {{ info.original_title }} {{ info.original_name }}
+          {{ ogTitle }}
         </li>
         <li>
           <span class="fw-bold">Voto:</span>
