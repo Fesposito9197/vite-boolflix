@@ -18,8 +18,12 @@ export default {
 <template>
   <header>
     <div class="container d-flex justify-content-between pt-2">
-      <h1 class="text-danger" @click="refresh">BOOLFIX</h1>
-      <form class="d-flex me-1 pb-1" @submit.prevent="$emit('search')">
+      <img @click="refresh" src="../assets/boolflix_logo.png" alt="Boolfix" />
+      <!-- <h1 class="text-danger" @click="refresh">BOOLFIX</h1> -->
+      <form
+        class="d-flex align-items-centerme-1 pb-1"
+        @submit.prevent="$emit('search')"
+      >
         <input
           class="form-control form-control-sm w-auto me-2"
           type="text"
@@ -33,8 +37,11 @@ export default {
 </template>
 
 <style lang="scss">
-h1 {
-  color: #e50914;
+// h1 {
+//   color: #e50914;
+// }
+img {
+  cursor: pointer;
 }
 .my-button {
   background: transparent;
